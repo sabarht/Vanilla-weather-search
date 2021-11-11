@@ -17,17 +17,24 @@
   <body>
     <div class="container weather-app">
       <div class="row"></div>
-      <h1 class="City">Berlin</h1>
-      <div class="form">
+      <h1 id="City">Berlin</h1>
+      <form id="search-form">
         <input
-          type="email"
+          type="search"
           class="form-control"
           id="search-city-input"
           placeholder="search a city"
         />
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
+        <input type="submit" value="search" class="btn btn-primary"></input>
+      </form>
       <div class="row">
+        <div class="col">
+          <img
+            src="http://openweathermap.org/img/wn/10d@2x.png"
+            id="icon"
+            alt="weather icon"
+          />
+        </div>
         <div class="col">
           <ul>
             <li><span id="temperature"></span>℃|℉</li>
@@ -44,6 +51,6 @@
         </div>
       </div>
     </div>
-    <script src="src/Index.js"></script>
+    <script src="src/index.js"></script>
   </body>
 </html>
