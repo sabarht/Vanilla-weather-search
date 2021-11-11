@@ -1,3 +1,6 @@
 .weater-app {
   border: 1px solid #545454;
 }
+li {
+  list-style: none;
+}
