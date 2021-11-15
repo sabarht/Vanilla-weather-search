@@ -1,7 +1,13 @@
 let now = new Date();
-now.getMinutes(); // 0,1,2, 12
-now.getHours(); //1, 2, 3, 4
-now.getDate(); //1, 2, 3, 4
+
+let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
+let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let days = [
   "Sunday",
   "Monday",
@@ -14,7 +20,7 @@ let days = [
 let day = days[now.getDay()];
 
 let dateElement = document.querySelector("#date");
-dateElement.innerHTML = `Last Updated on ${day} ${now.getHours()} :${now.getMinutes()}`;
+dateElement.innerHTML = `Last Updated on ${day} ${hours} :${minutes()}`;
 
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");

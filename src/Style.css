@@ -1,11 +1,10 @@
 .weather-app {
   background: linear-gradient(
     60.9deg,
-    rgb(208, 246, 255) 0.1%,
-    rgb(255, 237, 237) 47.9%,
+    rgba(208, 246, 255, 0.87) 0.1%,
+    rgba(255, 237, 237, 0.767) 47.9%,
     rgb(255, 255, 231) 100.2%
   );
-  margin: 24px;
   border: 1px solid #b7e8f3;
   border-radius: 5px;
   padding: 24px;
@@ -28,6 +27,11 @@ input[type="search"] {
   position: relative;
   top: 120px;
 }
+
+p {
+  margin-left: 24px;
+}
+
 li {
   list-style: none;
 }
