@@ -21,13 +21,13 @@ function showTemperature(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let descriptionElement = document.querySelector("#description");
-  let iconElement = document.querySelector("#icon");
   let cityElement = document.querySelector("#city");
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
   windElement.innerHTML = Math.round(response.data.wind.speed);
-  cityElement.innerHTML = response.data.name;
   descriptionElement.innerHTML = response.data.weather[0].description;
+  cityElement.innerHTML = response.data.name;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
@@ -40,16 +40,35 @@ function search(city) {
   axios.get(apiUrl).then(showTemperature);
 }
 
-function searchCity(event) {
+function handleSubmit(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-city-input");
-  search(searchInput.value);
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
 }
-search("berlin");
+function showFahrenheitTemperature(event) {
+  event.preventDefault;
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
+function showCelsiusTemperature(event) {
+  event.preventDefault;
+  let temperatureElement = document.querySelector("#temprature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  alert(celsiusTemperature);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
+
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", searchCity);
-/*function showWeeklyTemperature(params) {}
-  let apiUrl1 =
-  "https://api.openweathermap.org/data/2.5/forecast/daily?q=London&units=metric&cnt=7&appid=3586082911a3bafc0ae4afd4377c0a7c";
-  console.log(apiUrl1);
-  */
+form.addEventListener("submit", handleSubmit);
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+search("berlin");

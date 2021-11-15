@@ -1,6 +1,48 @@
-.weater-app {
-  border: 1px solid #545454;
+.weather-app {
+  background: linear-gradient(
+    60.9deg,
+    rgb(208, 246, 255) 0.1%,
+    rgb(255, 237, 237) 47.9%,
+    rgb(255, 255, 231) 100.2%
+  );
+  margin: 24px;
+  border: 1px solid #b7e8f3;
+  border-radius: 5px;
+  padding: 24px;
+}
+.container {
+  width: 50%;
+}
+
+input[type="search"] {
+  background: rgba(0, 0, 0, 0);
+  outline: none;
+  border: 1px solid #b7e8f3;
+}
+.btn {
+  background-color: #b5f1ff;
+  position: relative;
+  top: -3px;
+}
+.weather-info {
+  position: relative;
+  top: 120px;
 }
 li {
   list-style: none;
+}
+
+ul .active {
+  color: black;
+  cursor: default;
+}
+ul .active:hover {
+  text-decoration: none;
+}
+#temperature {
+  font-size: 40px;
+}
+#city-input {
+  display: inline;
+  width: 70%;
 }
