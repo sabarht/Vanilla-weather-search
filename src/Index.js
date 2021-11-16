@@ -1,37 +1,40 @@
-let now = new Date();
+function formatDate(timestamp) {
+  let now = new Date();
 
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let day = days[now.getDay()];
+
+  let dateElement = document.querySelector("#date");
+  dateElement.innerHTML = `Last Updated on ${day} ${hours} :${minutes}`;
 }
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-
-let dateElement = document.querySelector("#date");
-dateElement.innerHTML = `Last Updated on ${day} ${hours} :${minutes()}`;
-
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let descriptionElement = document.querySelector("#description");
+  let dateElement = document.querySelector("#date");
   let cityElement = document.querySelector("#city");
   let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  dateElement.innerHTML = formatDate(response.data.de * 1000);
   descriptionElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   iconElement.setAttribute(
