@@ -20,8 +20,7 @@ function formatDate(timestamp) {
   ];
   let day = days[now.getDay()];
 
-  let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = `Last Updated on ${day} ${hours} :${minutes}`;
+  return `Last Updated on ${day} ${hours} :${minutes}`;
 }
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
