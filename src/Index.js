@@ -66,7 +66,6 @@ function showCelsiusTemperature(event) {
   let temperatureElement = document.querySelector("#temprature");
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  alert(celsiusTemperature);
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
@@ -79,4 +78,4 @@ fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
-search("berlin");
+search("tehran");

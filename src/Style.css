@@ -1,8 +1,8 @@
 .weather-app {
   background: linear-gradient(
     60.9deg,
-    rgba(208, 246, 255, 0.87) 0.1%,
-    rgba(255, 237, 237, 0.767) 47.9%,
+    rgba(96, 177, 199, 0.966) 0.1%,
+    rgb(240, 196, 196) 47.9%,
     rgb(255, 255, 231) 100.2%
   );
   border: 1px solid #b7e8f3;
@@ -16,10 +16,10 @@
 input[type="search"] {
   background: rgba(0, 0, 0, 0);
   outline: none;
-  border: 1px solid #b7e8f3;
+  border: 1px solid #9fd9e6;
 }
 .btn {
-  background-color: #b5f1ff;
+  background-color: #72c4dbf6;
   position: relative;
   top: -3px;
 }
