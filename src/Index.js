@@ -19,9 +19,29 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[now.getDay()];
-
   return `Last Updated on ${day} ${hours} :${minutes}`;
 }
+
+function showForcast() {
+  let forcastElement = document.querySelector("forcast");
+  forcastElement.innerHTML = `    <div class="row">
+        <div class="col-2">
+        
+         <div class="weather-forecast-date">Wednesday</div>
+          
+          <img
+            src="http://openweathermap.org/img/wn/01d@2x.png"
+            id="icon"
+            alt="weather icon"
+          >
+          <div class="weather-forecast-temperature">
+          <span class="weather-forecast-temperature-max">14</span>
+          <span class="weather-forecast-temperature-min">5</span>
+        </div>
+     </div>
+      </div>`;
+}
+
 function showTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let humidityElement = document.querySelector("#humidity");
@@ -30,6 +50,9 @@ function showTemperature(response) {
   let dateElement = document.querySelector("#date");
   let cityElement = document.querySelector("#city");
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = response.data.main.temp;
+
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -79,3 +102,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("tehran");
+showForcast();

@@ -27,13 +27,7 @@ input[type="search"] {
   position: relative;
   top: 120px;
 }
-.first-day {
-  text-align: center;
-  font-size: 16px;
-}
-.first-day img {
-  width: 50%;
-}
+
 li {
   list-style: none;
 }
