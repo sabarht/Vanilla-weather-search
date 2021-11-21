@@ -22,12 +22,12 @@ function formatDate(timestamp) {
   return `Last Updated on ${day} ${hours} :${minutes}`;
 }
 
-function showForcast() {
-  let forcastElement = document.querySelector("forcast");
-  forcastElement.innerHTML = `    <div class="row">
-        <div class="col-2">
-        
-         <div class="weather-forecast-date">Wednesday</div>
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = `    
+    <div class="row">
+      <div class="col-2">
+        <div class="weather-forecast-date">Wednesday</div>
           
           <img
             src="http://openweathermap.org/img/wn/01d@2x.png"
@@ -35,11 +35,13 @@ function showForcast() {
             alt="weather icon"
           >
           <div class="weather-forecast-temperature">
-          <span class="weather-forecast-temperature-max">14</span>
-          <span class="weather-forecast-temperature-min">5</span>
+            <span class="weather-forecast-temperature-max">14</span>
+            <span class="weather-forecast-temperature-min">5</span>
+          </div>
         </div>
-     </div>
-      </div>`;
+     
+      </div>
+    </div>`;
 }
 
 function showTemperature(response) {
@@ -50,8 +52,6 @@ function showTemperature(response) {
   let dateElement = document.querySelector("#date");
   let cityElement = document.querySelector("#city");
   let iconElement = document.querySelector("#icon");
-
-  celsiusTemperature = response.data.main.temp;
 
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
@@ -76,30 +76,9 @@ function handleSubmit(event) {
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
 }
-function showFahrenheitTemperature(event) {
-  event.preventDefault;
-  let temperatureElement = document.querySelector("#temperature");
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemperature = (temperatureElement.innerHTML * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-}
-function showCelsiusTemperature(event) {
-  event.preventDefault;
-  let temperatureElement = document.querySelector("#temprature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-}
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsiusTemperature);
-
 search("tehran");
-showForcast();
+showForecast();
