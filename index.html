@@ -17,44 +17,47 @@
   <body>
     <div class="container">
       <div class="weather-app">
-      <div class="row">
-        <div class="col">
-      <h1 id="city">Tehran</h1>
-      </div>
-      <div class="col">
         <form id="search-form">
         <input
           type="search"
           class="form-control"
           id="city-input"
-          placeholder="search a city"
+          placeholder="Type a city... "
         />
         <input type="submit" value="search" class="btn"></input>
       </form>
+      <br />
+        <div class="row">
+          <div class="col">
+            <h1 id="city">Tehran</h1>
+          </div>
+          <div class="col">
+            <img
+            src="http://openweathermap.org/img/wn/01d@2x.png"
+            id="icon"
+            class="main-icon"
+            alt="weather icon"
+            >
       </div>
       </div>
       <div class="row">
         <div class="col">
-          <img
-            src="http://openweathermap.org/img/wn/01d@2x.png"
-            id="icon"
-            alt="weather icon"
-          >
         
           <ul>
-            <li><span id="temperature"></span>℃</li>
-            <li id="date">Tuesday</li>
+            <li class ="temp-now"><span id="temperature"></span> ℃</li>
             <li id="description">Partly cloudy</li>
+            <li id="date">Tuesday</li>
           </ul>
         </div>
         <div class="col">
           <ul class="weather-info">
-            <li>Precipitation: 0%</li>
-            <li>Humidity: <span id="humidity"></span>%</li>
-            <li>Wind: <span id="wind"></span> km/h</li>
+            <li>Precipitation 0%</li>
+            <li>Humidity <span id="humidity"></span>%</li>
+            <li>Wind <span id="wind"></span> km/h</li>
           </ul>
         </div>
       </div>
+      <br />
         <div class="five-days-forecast" id="forecast">
     
         </div>

@@ -1,48 +1,91 @@
-.weather-app {
-  background: linear-gradient(
-    60.9deg,
-    rgba(96, 177, 199, 0.966) 0.1%,
-    rgb(240, 196, 196) 47.9%,
-    rgb(255, 255, 231) 100.2%
-  );
-  border: 1px solid #b7e8f3;
-  border-radius: 5px;
-  padding: 24px;
-}
-.container {
-  width: 50%;
+input[type="search"] {
+  background: rgba(224, 237, 255, 0.849);
+  border: none;
+  border-radius: 24px;
+  margin: 0 32px;
 }
 
-input[type="search"] {
-  background: rgba(0, 0, 0, 0);
-  outline: none;
-  border: 1px solid #9fd9e6;
-}
-.btn {
-  background-color: #72c4dbf6;
-  position: relative;
-  top: -3px;
-}
-.weather-info {
-  position: relative;
-  top: 120px;
+input[type="submit"] {
+  color: #ffff;
 }
 
 li {
   list-style: none;
 }
 
-ul .active {
-  color: black;
-  cursor: default;
+.weather-app {
+  background: linear-gradient(to top, rgb(69, 120, 231), rgb(219, 237, 252));
+  margin-top: 24px;
+  border-radius: 8px;
+  padding: 32px 24px;
 }
-ul .active:hover {
-  text-decoration: none;
+.container {
+  width: 50%;
+  color: white;
+}
+.temp-now {
+  font-size: large;
+  font-weight: 700;
+}
+.btn {
+  font-size: 14px;
+  border-radius: 24px;
+  background-color: #497be8;
+  position: relative;
+  top: -3px;
+}
+.weather-info {
+  font-weight: 500;
+  position: relative;
+  top: 20px;
+}
+.five-days-forecast {
+  border-top: 1px solid #ffffff !important;
+  padding-top: 16px;
+}
+.weather-forecast-date {
+  font-size: 20px;
+  font-weight: 500;
+}
+.weather-forecast-temperature-max {
+  font-size: 18px;
+  position: relative;
+  top: -2px;
+}
+.col-2 {
+  text-align: center;
+  margin: 0 auto;
+}
+.credit {
+  color: #5d8bef;
+  font-size: 12px;
+}
+.main-icon {
+  width: 40%;
+}
+#search-form {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#city {
+  padding: 24px 0 0 24px;
+  font-weight: 700;
+  font-size: 42px;
+  text-shadow: #23506e;
 }
 #temperature {
   font-size: 40px;
 }
+#description {
+  font-weight: 500;
+}
 #city-input {
   display: inline;
   width: 70%;
+}
+#icon {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

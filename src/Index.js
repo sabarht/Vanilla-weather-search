@@ -19,7 +19,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = days[now.getDay()];
-  return `Last Updated on ${day} ${hours} :${minutes}`;
+  return `Updated on ${day} ${hours}:${minutes}`;
 }
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -55,6 +55,7 @@ function showForecast(response) {
                 <span class="weather-forecast-temperature-max">${Math.round(
                   forecastDay.temp.max
                 )}°</span>
+                /
                 <span class="weather-forecast-temperature-min">${Math.round(
                   forecastDay.temp.min
                 )}°</span>
