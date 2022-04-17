@@ -28,11 +28,15 @@ li {
   font-weight: 700;
 }
 .btn {
-  font-size: 14px;
+  font-size: 16px;
   border-radius: 24px;
   background-color: #497be8;
   position: relative;
   top: -3px;
+}
+.btn:hover {
+  border-radius: 24px;
+  box-shadow: 2px 2px 6px rgba(80, 129, 235, 0.74);
 }
 .weather-info {
   font-weight: 500;
@@ -85,7 +89,6 @@ li {
   width: 70%;
 }
 #icon {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  left: -12px;
 }
